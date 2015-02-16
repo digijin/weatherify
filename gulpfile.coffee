@@ -4,9 +4,9 @@ mocha = require 'gulp-mocha'
 nodemon = require 'gulp-nodemon'
 lint = require 'gulp-jshint'
 
-gulp.task 'default', ['bower', 'check', 'watch']
+gulp.task 'default', ['bower', 'check', 'watch', 'nodemon']
 
-source = ['app/**/*.*', 'spec/**/*.*', '!app/public/lib/**/*.*']
+source = ['app/**/*.js', 'spec/**/*.js', '!app/public/lib/**/*.*']
 
 
 gulp.task 'watch', ->
@@ -25,5 +25,10 @@ gulp.task 'lint', ['test'], ->
 	gulp.src source
 		.pipe lint()
 		.pipe lint.reporter 'default'
+
+gulp.task 'nodemon', ->
+	nodemon
+		script: 'app/server.js'
+		ext: 'js html'
 
 gulp.task 'postinstall', ['bower']
