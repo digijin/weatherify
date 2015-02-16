@@ -10,6 +10,6 @@ app.get('/', function(req,res){
 	res.send(index);
 });
 
-app.get('/weather/:location/:time', require('./routes/weather'));
+app.get('/weather/:location/:time?', require('./routes/weather'));
 
 app.listen(port);
