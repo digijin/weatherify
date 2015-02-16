@@ -1,7 +1,7 @@
 /*jshint -W030 */
 q = require('q');
 chai = require('chai');
-chai.should()
+chai.should();
 expect = chai.expect;
 chai.use(require("chai-as-promised"));
 weather = require('../app/repositories/weather');
