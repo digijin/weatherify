@@ -6,9 +6,9 @@ module.exports = {
 	get: function(location, time){
 		defer = q.defer();
 		defer.resolve({
-			latitude: 1,
-			longitude: 1,
-			currently: 1
+			// latitude: 1,
+			// longitude: 1,
+			// currently: 1
 		});
 		return defer.promise;
 	}

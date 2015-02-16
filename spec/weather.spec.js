@@ -1,6 +1,7 @@
 /*jshint -W030 */
 q = require('q');
 chai = require('chai');
+chai.should()
 expect = chai.expect;
 chai.use(require("chai-as-promised"));
 weather = require('../app/repositories/weather');
@@ -25,12 +26,8 @@ describe('weather', function(){
 			expect(result).to.eventually.have.property('latitude'),
 			expect(result).to.eventually.have.property('longitude'),
 			expect(result).to.eventually.have.property('currently')
-		]).then(function(){
-			console.log("yolo?");
-			done()
-		});
-		// 
-
+		]).should.notify(done);
+		
 	});
 
 });
