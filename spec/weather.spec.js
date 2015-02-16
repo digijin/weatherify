@@ -12,6 +12,14 @@ alcatraz = {
 	str: 'alcatraz'
 };
 
+/* 
+because this is auto-run each time I save any file 
+I am a bit paranoid about hitting request limits
+on both location and weather apis
+even though they are kinda high
+so I've leaned towards testing multiple things 
+with fewer tests
+*/
 describe('weather', function(){
 
 	it('should be defined', function(){
@@ -28,5 +36,18 @@ describe('weather', function(){
 			expect(result).to.eventually.have.property('currently') // cant check values because they change :/
 		]).should.notify(done);
 	});
+
+	it("should fetch weather when specifying a string location and string time", function(done){
+		this.timeout(5000);
+		result = weather.get('sydney', 'today');
+		q.all([
+			expect(result).to.eventually.be.an('object'),
+			expect(result).to.eventually.have.property('latitude'),
+			expect(result).to.eventually.have.property('longitude'),
+			expect(result).to.eventually.have.property('currently')
+		]).should.notify(done);
+
+	});
+
 
 });
