@@ -19,5 +19,16 @@
   "bugs": {
     "url": "https://github.com/digijin/weatherify/issues"
   },
-  "homepage": "https://github.com/digijin/weatherify"
+  "homepage": "https://github.com/digijin/weatherify",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-bower": "0.0.10",
+    "coffee-script": "^1.9.0",
+    "chai": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-mocha": "^2.0.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-nodemon": "^1.0.5"
+  }
 }
