@@ -16,14 +16,14 @@ describe("time", function(){
 		date = new Date();
 		dayDiff = date.getDay() - 1;
 		monday = new Date(date.getFullYear(), date.getMonth(),date.getDate())
-			.setDate(date.getDate() + dayDiff);
+			.setDate(date.getDate() + dayDiff) / 1000;
 		
 		expect(time.format('monday')).to.be.a('number');
 		expect(time.format('monday')).to.equal(monday);
 	});
 	it("should format 'today'", function(){
 		date = new Date();
-		today = new Date(date.getFullYear(), date.getMonth(),date.getDate()).getTime();
+		today = new Date(date.getFullYear(), date.getMonth(),date.getDate()).getTime() / 1000;
 		expect(time.format('today')).to.be.a('number');
 		expect(time.format('today')).to.equal(today);
 	});
