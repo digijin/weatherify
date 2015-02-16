@@ -23,20 +23,26 @@ describe('location', function(){
 		result = location.get(alcatraz.arr);
 		q.all([
 			expect(result).to.eventually.be.an('object'),
-			expect(result).to.eventually.have.property('lat'),
-			expect(result).to.eventually.have.property('lon')
+			expect(result).to.eventually.have.property('lat').that.equals(alcatraz.obj.lat),
+			expect(result).to.eventually.have.property('lon').that.equals(alcatraz.obj.lon)
 		]).should.notify(done);
 	});
 	it('should get a location object using a object', function(done){
 		result = location.get(alcatraz.obj);
 		q.all([
 			expect(result).to.eventually.be.an('object'),
-			expect(result).to.eventually.have.property('lat'),
-			expect(result).to.eventually.have.property('lon')
+			expect(result).to.eventually.have.property('lat').that.equals(alcatraz.obj.lat),
+			expect(result).to.eventually.have.property('lon').that.equals(alcatraz.obj.lon)
 		]).should.notify(done);
 	});
-
-	it('should get a locatino object using a string');
+	it('should get a location object using a string', function(done){
+		result = location.get(alcatraz.str);
+		q.all([
+			expect(result).to.eventually.be.an('object'),
+			expect(result).to.eventually.have.property('lat').that.equals(37.8269775),
+			expect(result).to.eventually.have.property('lon').that.equals(-122.4229555)
+		]).should.notify(done);
+	})
 
 	it('should throw errors when given bad input');
 
