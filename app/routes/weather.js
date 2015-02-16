@@ -5,11 +5,10 @@ module.exports = function(req, res){
 	weather.get(req.params.location, req.params.time).then(function(data){
 		console.log("json", json);
 		if(json){
-
 			res.send(data);
 		}else{
 			res.send("yoloswag240")
-		}
+		};
 	});
 	
 };
