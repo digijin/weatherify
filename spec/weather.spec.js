@@ -27,7 +27,6 @@ describe('weather', function(){
 			expect(result).to.eventually.have.property('longitude'),
 			expect(result).to.eventually.have.property('currently')
 		]).should.notify(done);
-		
 	});
 
 });
