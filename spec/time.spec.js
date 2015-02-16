@@ -21,6 +21,6 @@ describe("time", function(){
 
 	it("should return undefined if it cant match anything", function(){
 		expect(time.format('the future!')).to.be.an('undefined');
-	})
+	});
 
 });
