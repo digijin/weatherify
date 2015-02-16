@@ -26,11 +26,15 @@
     "coffee-script": "^1.9.0",
     "chai": "^2.0.0",
     "chai-as-promised": "^4.2.0",
-    "q": "^1.1.2"
+    "q": "^1.1.2",
+    "request": "^2.53.0"
   },
   "devDependencies": {
     "gulp-mocha": "^2.0.0",
     "gulp-jshint": "^1.9.2",
     "gulp-nodemon": "^1.0.5"
+  },
+  "engines": {
+    "node" : "0.10.26"
   }
 }
