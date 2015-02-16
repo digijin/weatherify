@@ -13,10 +13,14 @@ describe("time", function(){
 	});
 
 	it("should format a day of the week", function(){
-		expect(time.format('monday')).to.be.an('integer');
+		expect(time.format('monday')).to.be.a('number');
 	});
 	it("should format 'today'", function(){
-		expect(time.format('today')).to.be.an('integer');
+		expect(time.format('today')).to.be.a('number');
 	});
+
+	it("should return undefined if it cant match anything", function(){
+		expect(time.format('the future!')).to.be.an('undefined');
+	})
 
 });
