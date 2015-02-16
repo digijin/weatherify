@@ -36,6 +36,8 @@ describe('location', function(){
 		]).should.notify(done);
 	});
 
-	it('should throw errors when given bad input')
+	it('should get a locatino object using a string');
+
+	it('should throw errors when given bad input');
 
 });
