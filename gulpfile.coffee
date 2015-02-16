@@ -21,7 +21,7 @@ gulp.task 'test', ['bower'], ->
 gulp.task 'bower', ->
 	bower 'app/public/lib/'
 
-gulp.task 'lint', ->
+gulp.task 'lint', ['test'], ->
 	gulp.src source
 		.pipe lint()
 		.pipe lint.reporter 'default'
