@@ -27,5 +27,15 @@ describe('location', function(){
 			expect(result).to.eventually.have.property('lon')
 		]).should.notify(done);
 	});
+	it('should get a location object using a object', function(done){
+		result = location.get(alcatraz.obj);
+		q.all([
+			expect(result).to.eventually.be.an('object'),
+			expect(result).to.eventually.have.property('lat'),
+			expect(result).to.eventually.have.property('lon')
+		]).should.notify(done);
+	});
+
+	it('should throw errors when given bad input')
 
 });
