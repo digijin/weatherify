@@ -42,7 +42,7 @@ describe('location', function(){
 			expect(result).to.eventually.have.property('lat').that.equals(37.8269775),
 			expect(result).to.eventually.have.property('lon').that.equals(-122.4229555)
 		]).should.notify(done);
-	})
+	});
 
 	it('should throw errors when given bad input');
 
