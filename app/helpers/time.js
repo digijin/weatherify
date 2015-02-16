@@ -10,12 +10,20 @@ days = [
 
 module.exports = {
 	format: function(time){
+		date = new Date();
+		// alter date to be start of the day
+		date.setHours(0);
+		date.setMinutes(0);
+		date.setSeconds(0);
+		date.setMilliseconds(0);
 		if(time === 'today'){
-			return new Date().getTime();
+			return date.getTime();
 		}
-		day = days.indexOf(time.substr(0, 3)); //so days can be in many formats
+		day = days.indexOf(time.substr(0, 3)); //so days can be both long and short
 		if(day>-1){
-			return day;
+			dayDiff = date.getDay() - day;
+			date.setDate(date.getDate() + dayDiff);
+			return date.getTime();
 		}
 	}
 };

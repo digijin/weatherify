@@ -13,10 +13,19 @@ describe("time", function(){
 	});
 
 	it("should format a day of the week", function(){
+		date = new Date();
+		dayDiff = date.getDay() - 1;
+		monday = new Date(date.getFullYear(), date.getMonth(),date.getDate())
+			.setDate(date.getDate() + dayDiff);
+		
 		expect(time.format('monday')).to.be.a('number');
+		expect(time.format('monday')).to.equal(monday);
 	});
 	it("should format 'today'", function(){
+		date = new Date();
+		today = new Date(date.getFullYear(), date.getMonth(),date.getDate()).getTime();
 		expect(time.format('today')).to.be.a('number');
+		expect(time.format('today')).to.equal(today);
 	});
 
 	it("should return undefined if it cant match anything", function(){
