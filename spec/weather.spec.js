@@ -1,6 +1,7 @@
 /*jshint -W030 */
-expect = require('chai').expect;
-
+chai = require('chai')
+expect = chai.expect;
+chai.use(require("chai-as-promised"));
 weather = require('../app/repositories/weather');
 
 alcatraz = {
@@ -17,7 +18,7 @@ describe('weather', function(){
 	});
 
 	it('should fetch weather for a location using an array', function(){
-		expect(weather.get()).to.be.an('object');
+		expect(weather.get()).should.eventually.be.an('object');
 	});
 
 });
