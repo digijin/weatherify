@@ -32,10 +32,10 @@
     "express": "^4.11.2",
     "gulp-mocha": "^2.0.0",
     "gulp-jshint": "^1.9.2",
-    "gulp-nodemon": "^1.0.5"
+    "gulp-nodemon": "^1.0.5",
+    "consolidate": "^0.11.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": "<0.12"
   }

@@ -29,6 +29,6 @@ gulp.task 'lint', ['test'], ->
 gulp.task 'nodemon', ->
 	nodemon
 		script: 'app/server.js'
-		ext: 'js html'
+		ext: 'js html tmpl'
 
 gulp.task 'postinstall', ['bower']
