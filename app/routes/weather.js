@@ -6,7 +6,7 @@ module.exports = function(req, res){
 		if(json){
 			res.send(data);
 		}else{
-			res.render("weather");
+			res.render("weather", data);
 		}
 	});
 	

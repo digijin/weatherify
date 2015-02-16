@@ -3,11 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Weather Service</title>
+	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="" />
 </head>
 <body>
-
-weather!
-
-
+<div class="container">
+  <div class="jumbotron">
+    <h1>The Weather!</h1>
+    <p>Climate is what we expect, weather is what we get.</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>area details</h3>
+      <p>latitude: <%= latitude %></p>
+      <p>longitude: <%= longitude %></p>
+      <p>timezone: <%= timezone %></p>
+    </div>
+    <div class="col-sm-4">
+      <h3>current</h3>
+      <p>time: <%= new Date(currently.time*1000).toString() %></p>
+      <p>summary: <%= currently.summary %></p>
+    </div>
+    <div class="col-sm-4">
+      <h3>stats</h3> 
+      <p>temp: <%= currently.temperature %></p>
+      <p>apparent temp: <%= currently.apparentTemperature %></p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
