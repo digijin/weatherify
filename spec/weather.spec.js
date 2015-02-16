@@ -1,4 +1,5 @@
 /*jshint -W030 */
+q = require('q');
 chai = require('chai');
 expect = chai.expect;
 chai.use(require("chai-as-promised"));
@@ -17,8 +18,19 @@ describe('weather', function(){
 		expect(weather.get).not.to.be.an('undefined');
 	});
 
-	it('should fetch weather for a location using an array', function(){
-		expect(weather.get()).to.eventually.be.an('object');
+	it('should fetch weather for a location using an array', function(done){
+		result = weather.get(alcatraz.arr);
+		q.all([
+			expect(result).to.eventually.be.an('object'),
+			expect(result).to.eventually.have.property('latitude'),
+			expect(result).to.eventually.have.property('longitude'),
+			expect(result).to.eventually.have.property('currently')
+		]).then(function(){
+			console.log("yolo?");
+			done()
+		});
+		// 
+
 	});
 
 });
