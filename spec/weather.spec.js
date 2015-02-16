@@ -23,9 +23,9 @@ describe('weather', function(){
 		result = weather.get(alcatraz.arr);
 		q.all([
 			expect(result).to.eventually.be.an('object'),
-			expect(result).to.eventually.have.property('latitude'),
-			expect(result).to.eventually.have.property('longitude'),
-			expect(result).to.eventually.have.property('currently')
+			expect(result).to.eventually.have.property('latitude').that.equals(alcatraz.obj.lat),
+			expect(result).to.eventually.have.property('longitude').that.equals(alcatraz.obj.lon),
+			expect(result).to.eventually.have.property('currently') // cant check values because they change :/
 		]).should.notify(done);
 	});
 
