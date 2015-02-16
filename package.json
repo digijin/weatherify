@@ -1,0 +1,23 @@
+{
+  "name": "weatherify",
+  "version": "0.0.0",
+  "description": "weather service",
+  "main": "app/server.js",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/digijin/weatherify.git"
+  },
+  "keywords": [
+    "weather",
+    "service"
+  ],
+  "author": "digijin",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/digijin/weatherify/issues"
+  },
+  "homepage": "https://github.com/digijin/weatherify"
+}
