@@ -25,3 +25,5 @@ gulp.task 'lint', ['test'], ->
 	gulp.src source
 		.pipe lint()
 		.pipe lint.reporter 'default'
+
+gulp.task 'postinstall', ['bower']

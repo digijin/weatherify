@@ -4,7 +4,8 @@
   "description": "weather service",
   "main": "app/server.js",
   "scripts": {
-    "test": "mocha spec"
+    "test": "mocha spec",
+    "postinstall": "gulp postinstall"
   },
   "repository": {
     "type": "git",
