@@ -9,7 +9,7 @@
   <script src="/script/skycons.js"></script>
   <script>
   window.onload = function(){
-    skycon(document.getElementById('icon'), '<%= daily.icon %>')
+    skycon(document.getElementById('icon'), '<%= currently.icon %>')
   }
   </script>
 </head>
@@ -30,7 +30,7 @@
       <h3>current</h3>
       <p>time: <%= new Date(currently.time*1000).toString() %></p>
       <p>summary: <%= currently.summary %></p>
-      <p><canvas id="icon" /></p>
+      <p><canvas id="icon" width="128" height="128" /></p>
     </div>
     <div class="col-sm-4">
       <h3>stats</h3> 
