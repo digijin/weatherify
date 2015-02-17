@@ -10,12 +10,13 @@
 		return 'https://api.forecast.io/forecast/'+forecastApiKey+'/'+params;
 	};
 
-
 	module.exports = {
 		get: function(loc, time){
 			defer = q.defer();
 			time = timeHelper.format(time);
 			location.get(loc).then(function(loc){
+
+				// this bit is a bit ugly
 				params = loc.lat + ',' + loc.lon;
 				if(time){
 					params += ',' + time;

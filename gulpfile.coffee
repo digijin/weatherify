@@ -24,7 +24,7 @@ gulp.task 'bower', ->
 gulp.task 'lint', ['test'], ->
 	gulp.src source
 		.pipe lint()
-		.pipe lint.reporter 'default'
+		.pipe lint.reporter 'jshint-stylish'
 
 gulp.task 'nodemon', ->
 	nodemon

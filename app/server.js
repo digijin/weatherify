@@ -1,22 +1,28 @@
+cons = require('consolidate');
 express = require('express');
+path = require('path');
+
 app = express();
 port = process.env.PORT || 3000;
 
-path = require('path');
-cons = require('consolidate');
+// I could break this into views and router files, but this file is small enough.
 
-// I could break this into views and router files, but its small enough.
-
+//views
 app.engine('html',cons.underscore);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
+//routes
 app.get('/', function(req,res){
 	res.render('index');
 });
-
 app.get('/weather/:location/:time?', require('./routes/weather'));
 
+//middleware
 app.use(express.static(__dirname + '/public'));
+app.use(function(err, req, res, next){
+	console.error(err.stack);
+	res.status(500).send('Something broke!');
+});
 
 app.listen(port);

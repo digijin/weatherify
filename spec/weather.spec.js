@@ -17,8 +17,6 @@ because this is auto-run each time I save any file
 I am a bit paranoid about hitting request limits
 on both location and weather apis
 even though they are kinda high
-so I've leaned towards testing multiple things 
-with fewer tests
 */
 describe('weather', function(){
 

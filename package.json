@@ -5,7 +5,8 @@
   "main": "app/server.js",
   "scripts": {
     "test": "mocha spec",
-    "postinstall": "gulp postinstall"
+    "postinstall": "gulp postinstall",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,6 @@
     "service"
   ],
   "author": "digijin",
-  "license": "none",
   "bugs": {
     "url": "https://github.com/digijin/weatherify/issues"
   },
@@ -34,7 +34,8 @@
     "gulp-jshint": "^1.9.2",
     "gulp-nodemon": "^1.0.5",
     "consolidate": "^0.11.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "jshint-stylish": "^1.0.0"
   },
   "devDependencies": {},
   "engines": {
