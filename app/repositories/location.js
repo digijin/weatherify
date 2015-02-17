@@ -16,7 +16,7 @@
 					lat:location[0], 
 					lon:location[1]
 				});
-			}else if(typeof location === "string"){
+			}else if(typeof location === "string"){ // if its a string
 				path = makeLocPath(location);
 				request(path, function(err,res,body){
 					result = (JSON.parse(body));
@@ -25,7 +25,7 @@
 						lon: result.results[0].geometry.location.lng
 					});
 				});
-			}else{
+			}else{ // if its an object
 				def.resolve({
 					lat:location.lat, 
 					lon:location.lon
